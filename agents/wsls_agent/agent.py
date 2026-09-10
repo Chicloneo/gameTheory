@@ -7,7 +7,7 @@ from typing import List
 from utils.game_core import Agent, COOPERATE, DEFECT
 
 
-class CopycatAgent(Agent):
+class WslsAgent(Agent):
     """
     Pavlov: cooperate on round 1, then repeat action if it won last round otherwise switch action
 

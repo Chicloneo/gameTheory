@@ -11,7 +11,7 @@ from typing import List
 from utils.game_core import Agent, COOPERATE, DEFECT
 
 
-class CopycatAgent(Agent):
+class MyStrategy2Agent(Agent):
     """
     Tit-for-Tat strategy: cooperate on round 1, then copy opponent's last move.
 
