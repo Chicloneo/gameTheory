@@ -22,6 +22,7 @@ class MyStrategyGuillermoZapataAgent(Agent):
 
     This agent is provided as a template for student assignments.
     """
+    opponent_defection_count = 0
 
     def play(self, own_history: List[str], opponent_history: List[str]) -> str:
         """
@@ -41,6 +42,7 @@ class MyStrategyGuillermoZapataAgent(Agent):
         """
         if not opponent_history:
                     # Round 1: start with cooperation
+                    self.opponent_defection_count = 0
                     return COOPERATE
         
                 # Check if opponent defected last round
