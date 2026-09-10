@@ -28,7 +28,7 @@ class MyStrategyGuillermoZapataAgent(Agent):
         """
         To try and beat a one on one just by returning DEFEAT the agent would always win. When trying to achieve the highest amount of
         points against the current 3 other agents, going tit for tat is the most likely strategy to score the most points over all. However there
-        would always be a tie against a Copycat agent. 
+        would always be a tie against a Copycat agent.
 
         When playing against the second chance agent, Copycat would lose to it in the overall point system when paired up against the Random
         agent.
@@ -41,21 +41,18 @@ class MyStrategyGuillermoZapataAgent(Agent):
 
         """
         if not opponent_history:
-                    # Round 1: start with cooperation
-                    self.opponent_defection_count = 0
-                    return COOPERATE
-        
-                # Check if opponent defected last round
-        if opponent_history[-1] == DEFECT:
-                    self.opponent_defection_count += 1
-        
-                # Retaliate only if we've seen two defections
-        if self.opponent_defection_count >= 2:
-                    # Retaliate once
-                    self.opponent_defection_count = 0  # Reset for forgiveness
-                    return DEFECT
-        
-                
-        if self.opponent_defection_count <2:
-                return opponent_history[-1]
+            # Round 1: start with cooperation
+            self.opponent_defection_count = 0
+            return COOPERATE
 
+        # Check if opponent defected last round
+        if opponent_history[-1] == DEFECT:
+            self.opponent_defection_count += 1
+
+        # Retaliate only if we've seen two defections
+        if self.opponent_defection_count >= 2:
+            # Retaliate once
+            self.opponent_defection_count = 0  # Reset for forgiveness
+            return DEFECT
+        else:
+            return opponent_history[-1]
