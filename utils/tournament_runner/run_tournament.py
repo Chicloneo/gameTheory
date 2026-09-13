@@ -208,37 +208,28 @@ Examples:
         stats_a = calculate_statistics(result.agent_a_history, result.agent_b_history)
         stats_b = calculate_statistics(result.agent_b_history, result.agent_a_history)
 
-        # Record both perspectives (same match, different perspectives)
+        # Record single row with both agents' data
         results.append({
             "pairing_id": idx - 1,
             "num_rounds": result.num_rounds,
-            "agent_name": agent_a_name,
-            "opponent_name": agent_b_name,
-            "points_scored": result.agent_a_score,
-            "opponent_points": result.agent_b_score,
-            "first_move_cooperate": stats_a["first_move_cooperate"],
-            "total_cooperations": stats_a["total_cooperations"],
-            "total_defections": stats_a["total_defections"],
-            "cooperate_after_opponent_cooperate": stats_a["cooperate_after_opponent_cooperate"],
-            "defect_after_opponent_cooperate": stats_a["defect_after_opponent_cooperate"],
-            "cooperate_after_opponent_defect": stats_a["cooperate_after_opponent_defect"],
-            "defect_after_opponent_defect": stats_a["defect_after_opponent_defect"],
-        })
-
-        results.append({
-            "pairing_id": idx - 1,
-            "num_rounds": result.num_rounds,
-            "agent_name": agent_b_name,
-            "opponent_name": agent_a_name,
-            "points_scored": result.agent_b_score,
-            "opponent_points": result.agent_a_score,
-            "first_move_cooperate": stats_b["first_move_cooperate"],
-            "total_cooperations": stats_b["total_cooperations"],
-            "total_defections": stats_b["total_defections"],
-            "cooperate_after_opponent_cooperate": stats_b["cooperate_after_opponent_cooperate"],
-            "defect_after_opponent_cooperate": stats_b["defect_after_opponent_cooperate"],
-            "cooperate_after_opponent_defect": stats_b["cooperate_after_opponent_defect"],
-            "defect_after_opponent_defect": stats_b["defect_after_opponent_defect"],
+            "agent_a": agent_a_name,
+            "agent_b": agent_b_name,
+            "agent_a_points": result.agent_a_score,
+            "agent_b_points": result.agent_b_score,
+            "agent_a_first_move_cooperate": stats_a["first_move_cooperate"],
+            "agent_a_total_cooperations": stats_a["total_cooperations"],
+            "agent_a_total_defections": stats_a["total_defections"],
+            "agent_a_cooperate_after_opponent_cooperate": stats_a["cooperate_after_opponent_cooperate"],
+            "agent_a_defect_after_opponent_cooperate": stats_a["defect_after_opponent_cooperate"],
+            "agent_a_cooperate_after_opponent_defect": stats_a["cooperate_after_opponent_defect"],
+            "agent_a_defect_after_opponent_defect": stats_a["defect_after_opponent_defect"],
+            "agent_b_first_move_cooperate": stats_b["first_move_cooperate"],
+            "agent_b_total_cooperations": stats_b["total_cooperations"],
+            "agent_b_total_defections": stats_b["total_defections"],
+            "agent_b_cooperate_after_opponent_cooperate": stats_b["cooperate_after_opponent_cooperate"],
+            "agent_b_defect_after_opponent_cooperate": stats_b["defect_after_opponent_cooperate"],
+            "agent_b_cooperate_after_opponent_defect": stats_b["cooperate_after_opponent_defect"],
+            "agent_b_defect_after_opponent_defect": stats_b["defect_after_opponent_defect"],
         })
 
         if args.verbose:
@@ -254,8 +245,8 @@ Examples:
 
     print(f"\n{GREEN}Tournament complete!{RESET}")
     print(f"  {WHITE}Agents: {len(agents)}{RESET}")
-    print(f"  {WHITE}Unique pairings: {len(pairings)}{RESET}")
-    print(f"  {WHITE}Results rows: {len(results)}{RESET}")
+    print(f"  {WHITE}Pairings: {len(pairings)}{RESET}")
+    print(f"  {WHITE}CSV rows: {len(results)}{RESET}")
     print(f"  {WHITE}Output: {output_path}{RESET}")
 
 

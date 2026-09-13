@@ -62,6 +62,26 @@ python utils/tournament_runner/run_tournament.py --rounds 100 --unknown-horizon
 
 Results are saved to `results/tournament_<timestamp>_<flags>.csv`
 
+### Tournament Analysis
+Analyze and visualize tournament results with detailed statistics and rankings:
+
+```bash
+python analyze_tournament.py
+```
+
+This script generates comprehensive tournament analysis including:
+
+- **Overall Rankings** — Agents sorted by total points with match count and average points
+- **Self-Play Performance** — Points scored against agents of the same type
+- **Win Rate Analysis** — Wins, ties, and losses for each agent
+- **Consistency Metrics** — Standard deviation to identify most/least consistent performers
+- **Cooperation Rates** — How often each agent cooperates, ranked by cooperation percentage
+- **Best/Worst Matchups** — Top 5 best and worst pairings by points scored
+- **Worst Agents Ranking** — Bottom performers sorted by total points
+- **Global Statistics** — Tournament summary with champion and last place
+
+**Note:** Edit the `csv_path` variable at the top of the script (line 19) to analyze different tournament results.
+
 ### Agent Collector
 Import student agents from repositories or files:
 
