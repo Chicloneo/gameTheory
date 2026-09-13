@@ -36,5 +36,8 @@ class myAlternateAgent(Agent):
             answer = own_history[-1]
             if answer == DEFECT:
                 return COOPERATE
-            return DEFECT
+            else:
+                return DEFECT
+
+        return DEFECT
             
